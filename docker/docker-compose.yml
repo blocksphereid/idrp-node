@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  node:
+    build:
+      context: .
+    image: blocksphereid/idrp-node
+    volumes:
+      - data:/data
+    command: >
+      --base-path /data
+    ports:
+      - 30333:30333
+      - 9933:9933
+      - 9944:9944
+      - 30334:30334
+      - 9934:9934
+      - 9945:9945
+
+volumes:
+  data:
