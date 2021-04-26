@@ -5,7 +5,12 @@
   "bootNodes": [
     "/dns/p2p.1.idrp.blocksphere.id/tcp/30333/p2p/12D3KooWDa1NRbYKfa4y2zgkWcTrQ5Y8PTy6Uu1cXkAkPeYxg8Xv"
   ],
-  "telemetryEndpoints": null,
+  "telemetryEndpoints": [
+    [
+      "wss://telemetry.polkadot.io/submit/",
+      0
+    ]
+  ],
   "protocolId": "idrp",
   "properties": {
     "ss58Format": 102,
