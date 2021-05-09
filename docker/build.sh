@@ -8,7 +8,7 @@ PROJECT_ROOT=`git rev-parse --show-toplevel`
 cd $PROJECT_ROOT
 
 GITUSER=blocksphereid
-GITREPO=idrp-node
+GITREPO=uniqueone-node
 VCS_REF=`git rev-parse --short HEAD`
 VERSION=`grep -m 1 "^version" ./node/Cargo.toml | egrep -o "([0-9\.]+)"`
 BUILD_DATE=`date -u +"%Y%m%d"`

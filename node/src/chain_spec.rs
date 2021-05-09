@@ -1,5 +1,5 @@
 use cumulus_primitives_core::ParaId;
-use idrp_runtime::{AccountId, Signature};
+use uniqueone_runtime::{AccountId, Signature};
 use sc_chain_spec::{ChainSpecExtension, ChainSpecGroup};
 use sc_service::{ChainType, Properties};
 use serde::{Deserialize, Serialize};
@@ -8,7 +8,7 @@ use sp_runtime::traits::{IdentifyAccount, Verify};
 use hex_literal::hex;
 
 /// Specialized `ChainSpec` for the normal parachain runtime.
-pub type ChainSpec = sc_service::GenericChainSpec<idrp_runtime::GenesisConfig, Extensions>;
+pub type ChainSpec = sc_service::GenericChainSpec<uniqueone_runtime::GenesisConfig, Extensions>;
 
 /// The extensions for the [`ChainSpec`].
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize, ChainSpecGroup, ChainSpecExtension)]
@@ -59,13 +59,13 @@ pub fn rococo_network_config() -> Result<ChainSpec, String> {
 }
 
 pub fn local_testnet_config(id: ParaId) -> ChainSpec {
-    let properties = get_properties("IDRPL", 2, 102);
+    let properties = get_properties("Unit", 12, 111);
 
     ChainSpec::from_genesis(
         // Name
-        "IDRP Local Testnet",
+        "UniqueOne Local Testnet",
         // ID
-        "idrp_local_testnet",  
+        "uniqueone_local_testnet",  
         ChainType::Local,
         move || {
             testnet_genesis(
@@ -95,7 +95,7 @@ pub fn local_testnet_config(id: ParaId) -> ChainSpec {
 		// Telemetry
 		None,
 		// Protocol ID
-		Some("idrp-local".into()),
+		Some("uniqueone-local".into()),
 		// Properties
 		Some(properties),
 		// Extensions
@@ -107,13 +107,13 @@ pub fn local_testnet_config(id: ParaId) -> ChainSpec {
 }
 
 pub fn staging_testnet_config(id: ParaId) -> ChainSpec {
-    let properties = get_properties("IDRPS", 2, 102);
+    let properties = get_properties("Unit", 12, 111);
 
     ChainSpec::from_genesis(
         // Name
-        "IDRP Staging Testnet",
+        "UniqueOne Staging Testnet",
         // ID
-        "idrp_staging_testnet",  
+        "uniqueone_staging_testnet",  
         ChainType::Live,
         move || {
             testnet_genesis(
@@ -136,7 +136,7 @@ pub fn staging_testnet_config(id: ParaId) -> ChainSpec {
 		// Telemetry
 		None,
 		// Protocol ID
-		Some("idrp-staging".into()),
+		Some("uniqueone-staging".into()),
 		// Properties
 		Some(properties),
 		// Extensions
@@ -151,22 +151,22 @@ fn testnet_genesis(
     root_key: AccountId,
     endowed_accounts: Vec<AccountId>,
     id: ParaId,
-) -> idrp_runtime::GenesisConfig {
-    idrp_runtime::GenesisConfig {
-        frame_system: idrp_runtime::SystemConfig {
-            code: idrp_runtime::WASM_BINARY
+) -> uniqueone_runtime::GenesisConfig {
+    uniqueone_runtime::GenesisConfig {
+        frame_system: uniqueone_runtime::SystemConfig {
+            code: uniqueone_runtime::WASM_BINARY
                 .expect("WASM binary was not build, please build it!")
                 .to_vec(),
             changes_trie_config: Default::default(),
         },
-        pallet_balances: idrp_runtime::BalancesConfig {
+        pallet_balances: uniqueone_runtime::BalancesConfig {
             balances: endowed_accounts
                 .iter()
                 .cloned()
-                .map(|k| (k, 100000000000_u128))
+                .map(|k| (k, 1000000000000000000000_u128))
                 .collect(),
         },
-        pallet_sudo: idrp_runtime::SudoConfig { key: root_key },
-        parachain_info: idrp_runtime::ParachainInfoConfig { parachain_id: id },
+        pallet_sudo: uniqueone_runtime::SudoConfig { key: root_key },
+        parachain_info: uniqueone_runtime::ParachainInfoConfig { parachain_id: id },
     }
 }

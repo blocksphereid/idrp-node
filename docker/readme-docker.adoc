@@ -1,11 +1,11 @@
 
-== IDRP Docker
+== uniqueone Docker
 
-=== Start a IDRP docker container
+=== Start a uniqueone docker container
 
 Run the following command
 
-	docker run -d -P --name idrp-node blocksphereid/idrp-node:latest
+	docker run -d -P --name uniqueone-node blocksphereid/uniqueone-node:latest
 
 === Building the image
 

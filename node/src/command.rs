@@ -6,7 +6,7 @@ use codec::Encode;
 use cumulus_client_service::genesis::generate_genesis_block;
 use cumulus_primitives_core::ParaId;
 use log::info;
-use idrp_runtime::Block;
+use uniqueone_runtime::Block;
 use polkadot_parachain::primitives::AccountIdConversion;
 use sc_cli::{
 	ChainSpec, CliConfiguration, DefaultConfigurationValues, ImportParams,
@@ -36,7 +36,7 @@ fn load_spec(
 
 impl SubstrateCli for Cli {
 	fn impl_name() -> String {
-		"idrp".into()
+		"uniqueone".into()
 	}
 
 	fn impl_version() -> String {
@@ -58,7 +58,7 @@ impl SubstrateCli for Cli {
 	}
 
 	fn support_url() -> String {
-		"https://github.com/blocksphereid/idrp-node/issues/new".into()
+		"https://github.com/blocksphereid/uniqueone-node/issues/new".into()
 	}
 
 	fn copyright_start_year() -> i32 {
@@ -66,17 +66,17 @@ impl SubstrateCli for Cli {
 	}
 
 	fn load_spec(&self, id: &str) -> std::result::Result<Box<dyn sc_service::ChainSpec>, String> {
-		load_spec(id, self.run.parachain_id.unwrap_or(102).into())
+		load_spec(id, self.run.parachain_id.unwrap_or(111).into())
 	}
 
 	fn native_runtime_version(_: &Box<dyn ChainSpec>) -> &'static RuntimeVersion {
-		&idrp_runtime::VERSION
+		&uniqueone_runtime::VERSION
 	}
 }
 
 impl SubstrateCli for RelayChainCli {
 	fn impl_name() -> String {
-		"idrp".into()
+		"uniqueone".into()
 	}
 
 	fn impl_version() -> String {
@@ -96,7 +96,7 @@ impl SubstrateCli for RelayChainCli {
 	}
 
 	fn support_url() -> String {
-		"https://github.com/blocksphereid/idrp-node/issues/new".into()
+		"https://github.com/blocksphereid/uniqueone-node/issues/new".into()
 	}
 
 	fn copyright_start_year() -> i32 {
@@ -257,7 +257,7 @@ pub fn run() -> Result<()> {
 						.chain(cli.relaychain_args.iter()),
 				);
 
-				let id = ParaId::from(cli.run.parachain_id.or(para_id).unwrap_or(102));
+				let id = ParaId::from(cli.run.parachain_id.or(para_id).unwrap_or(111));
 
 				let parachain_account =
 					AccountIdConversion::<polkadot_primitives::v0::AccountId>::into_account(&id);

@@ -95,8 +95,8 @@ pub mod opaque {
 }
 
 pub const VERSION: RuntimeVersion = RuntimeVersion {
-	spec_name: create_runtime_str!("idrp"),
-	impl_name: create_runtime_str!("idrp"),
+	spec_name: create_runtime_str!("uniqueone"),
+	impl_name: create_runtime_str!("uniqueone"),
 	authoring_version: 1,
 	spec_version: 1,
 	impl_version: 1,
@@ -169,7 +169,7 @@ parameter_types! {
 		})
 		.avg_block_initialization(AVERAGE_ON_INITIALIZE_RATIO)
 		.build_or_panic();
-	pub const SS58Prefix: u8 = 102;
+	pub const SS58Prefix: u8 = 111;
 }
 
 // Configure FRAME pallets to include in runtime.
@@ -477,7 +477,7 @@ impl_runtime_apis! {
 			TransactionPayment::query_fee_details(uxt, len)
 		}
 	}
-
+	
 	#[cfg(feature = "runtime-benchmarks")]
 	impl frame_benchmarking::Benchmark<Block> for Runtime {
 		fn dispatch_benchmark(

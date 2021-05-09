@@ -1,11 +1,11 @@
 [package]
-name = 'idrp-runtime'
+name = 'uniqueone-runtime'
 description = 'A new Cumulus FRAME-based Substrate node, ready for hacking.'
 version = '1.0.0'
 edition = '2018'
 license = 'Unlicense'
-homepage = 'https://github.com/blocksphereid/idrp-node'
-repository = 'https://github.com/blocksphereid/idrp-node'
+homepage = 'https://github.com/blocksphereid/uniqueone-node'
+repository = 'https://github.com/blocksphereid/uniqueone-node'
 authors = ['Blocksphere DevTeam <devteam@blocksphere.id>']
 
 [package.metadata.docs.rs]

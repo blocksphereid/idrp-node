@@ -7,7 +7,7 @@ use cumulus_client_service::{
 };
 use cumulus_primitives_core::ParaId;
 use polkadot_primitives::v0::CollatorPair;
-use idrp_runtime::{RuntimeApi, opaque::Block};
+use uniqueone_runtime::{RuntimeApi, opaque::Block};
 use sc_executor::native_executor_instance;
 pub use sc_executor::NativeExecutor;
 use sc_service::{Configuration, PartialComponents, Role, TFullBackend, TFullClient, TaskManager};
@@ -20,8 +20,8 @@ use std::sync::Arc;
 // Native executor instance.
 native_executor_instance!(
 	pub Executor,
-	idrp_runtime::api::dispatch,
-	idrp_runtime::native_version,
+	uniqueone_runtime::api::dispatch,
+	uniqueone_runtime::native_version,
 );
 
 /// Starts a `ServiceBuilder` for a full service.

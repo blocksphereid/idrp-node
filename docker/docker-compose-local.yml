@@ -4,7 +4,7 @@ services:
   node_alice:
     build:
       context: .
-    image: blocksphereid/idrp-node
+    image: blocksphereid/uniqueone-node
     volumes:
       - data-alice:/data
     command: >
@@ -28,7 +28,7 @@ services:
   node_bob:
     build:
       context: .
-    image: blocksphereid/idrp-node
+    image: blocksphereid/uniqueone-node
     volumes:
       - data-bob:/data
     command: >

@@ -2,7 +2,7 @@ version: '3'
 
 services:
   genesis_state:
-    image: blocksphereid/idrp-node
+    image: blocksphereid/uniqueone-node
     volumes:
       - ./genesis-state:/data
     command: >
@@ -11,7 +11,7 @@ services:
       /data/genesis-state
   
   genesis_wasm:
-    image: blocksphereid/idrp-node
+    image: blocksphereid/uniqueone-node
     volumes:
       - ./genesis-wasm:/data
     command: >

@@ -1,9 +1,9 @@
 {
-  "name": "IDRP",
-  "id": "idrp",
+  "name": "uniqueone",
+  "id": "uniqueone",
   "chainType": "Live",
   "bootNodes": [
-    "/dns/p2p.1.idrp.blocksphere.id/tcp/30333/p2p/12D3KooWDa1NRbYKfa4y2zgkWcTrQ5Y8PTy6Uu1cXkAkPeYxg8Xv"
+    "/dns/p2p.1.uniqueone.blocksphere.id/tcp/30333/p2p/12D3KooWDa1NRbYKfa4y2zgkWcTrQ5Y8PTy6Uu1cXkAkPeYxg8Xv"
   ],
   "telemetryEndpoints": [
     [
@@ -11,11 +11,11 @@
       0
     ]
   ],
-  "protocolId": "idrp",
+  "protocolId": "uniqueone",
   "properties": {
     "ss58Format": 102,
     "tokenDecimals": 2,
-    "tokenSymbol": "IDRP"
+    "tokenSymbol": "uniqueone"
   },
   "relay_chain": "rococo",
   "para_id": 102,

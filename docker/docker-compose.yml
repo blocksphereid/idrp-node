@@ -4,7 +4,7 @@ services:
   node:
     build:
       context: .
-    image: blocksphereid/idrp-node
+    image: blocksphereid/uniqueone-node
     volumes:
       - data:/data
     command: >
